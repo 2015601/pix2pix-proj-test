@@ -7,8 +7,7 @@ def load_img(filepath):
     return img
 
 def is_img_file(filename):
-    for extension in ['.jpeg','.jpg','.png']:
-        return any(filename.endswith(extension))
+    return any(filename.endswith(extension) for extension in [".png", ".jpg", ".jpeg"])
 
 def save_img(img_tensor,filename):
     img_numpy = img_tensor.float().numpy()
